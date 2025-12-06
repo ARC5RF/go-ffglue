@@ -88,10 +88,8 @@ func (task *re_encode_task) start(input, throttle string, dur time.Duration) err
 }
 
 func ReEncode(tracker Int64Tracker, options ReEncodeOptions, output string) error {
-	fmt.Println("ffglue.ReEncode", tracker, options, output)
 	dur, dur_err := blame.O1(VideoDuration(options.Input))
 	if dur_err != nil {
-		fmt.Println("ffglue.ReEncode dur_err", dur_err)
 		return dur_err
 	}
 
