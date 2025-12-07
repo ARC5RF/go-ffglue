@@ -100,7 +100,7 @@ func ReEncode(tracker Int64Tracker, options ReEncodeOptions, output string) erro
 		options.Throttle = "100"
 	}
 
-	to_run := []string{"-i", options.Input, "-c:v", options.Codec, "-preset", options.Preset, "-crf", options.CRF, "-c:a", "copy", "-map", "0"}
+	to_run := []string{"-i", options.Input, "-c:v", options.Codec, "-crf", options.CRF, "-preset", options.Preset, "-c:a", "copy", "-map", "0"}
 	if len(options.Extra) > 1 {
 		to_run = append(to_run, strings.Split(options.Extra, " ")...)
 	}
